@@ -21,6 +21,6 @@ public class JSONArray extends HashMap<String, JSONData> implements JSONData {
 		String string = "{";
 		for (Entry<String, JSONData> data : this.entrySet())
 			string += "\"" + data.getKey() + "\":" + data.getValue() + ",";
-		return string.substring(0, string.length() - 1) + "}";
+		return (size() > 0 ? string.substring(0, string.length() - 1) : string.substring(0, string.length())) + "}";
 	}
 }
